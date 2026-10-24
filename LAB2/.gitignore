@@ -1,0 +1,7 @@
+build/
+tools/
+results/*.data
+results/*.data.old
+results/*.perf
+results/.cpu
+results/.emi_stop

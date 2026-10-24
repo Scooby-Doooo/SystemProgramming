@@ -1,0 +1,981 @@
+src/sigproc.c:30:15: missed: statement clobbers memory: p_6 = aligned_alloc (64, _2);
+src/sigproc.c:32:9: missed: statement clobbers memory: perror ("aligned_alloc");
+src/sigproc.c:33:9: missed: statement clobbers memory: exit (1);
+src/sigproc.c:33:9: note: ***** Analysis failed with vector mode VOID
+src/sigproc.c:69:23: missed: couldn't vectorize loop
+src/sigproc.c:75:38: missed: not vectorized: complicated access pattern.
+src/sigproc.c:74:27: optimized: loop vectorized using 32 byte vectors
+src/sigproc.c:74:27: optimized: loop vectorized using 16 byte vectors
+src/sigproc.c:67:12: note: vectorized 1 loops in function.
+src/sigproc.c:75:20: note: ***** Analysis succeeded with vector mode V8SF
+src/sigproc.c:75:20: note: SLPing BB part
+src/sigproc.c:75:20: note: Costing subgraph: 
+src/sigproc.c:75:20: note: node 0x40c0d408 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_363 = _364;
+src/sigproc.c:75:20: note: 	stmt 0 *_363 = _364;
+src/sigproc.c:75:20: note: 	stmt 1 *_395 = _396;
+src/sigproc.c:75:20: note: 	children 0x40c0d488
+src/sigproc.c:75:20: note: node 0x40c0d488 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _364 = _118 + _360;
+src/sigproc.c:75:20: note: 	stmt 0 _364 = _118 + _360;
+src/sigproc.c:75:20: note: 	stmt 1 _396 = _355 + _392;
+src/sigproc.c:75:20: note: 	children 0x40c0d508 0x40c0d588
+src/sigproc.c:75:20: note: node 0x40c0d508 (max_nunits=2, refcnt=2) const vector(2) float
+src/sigproc.c:75:20: note: op template: _118 = *_18;
+src/sigproc.c:75:20: note: 	stmt 0 _118 = *_18;
+src/sigproc.c:75:20: note: 	stmt 1 _355 = *_354;
+src/sigproc.c:75:20: note: node 0x40c0d588 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _360 = _359 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	stmt 0 _360 = _359 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	stmt 1 _392 = _391 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	children 0x40c0d608 0x40c0db08
+src/sigproc.c:75:20: note: node 0x40c0d608 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _359 = _357 - _358;
+src/sigproc.c:75:20: note: 	stmt 0 _359 = _357 - _358;
+src/sigproc.c:75:20: note: 	stmt 1 _391 = _389 - _390;
+src/sigproc.c:75:20: note: 	children 0x40c0d688 0x40c0da08
+src/sigproc.c:75:20: note: node 0x40c0d688 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _357 = _351 + _355;
+src/sigproc.c:75:20: note: 	stmt 0 _357 = _351 + _355;
+src/sigproc.c:75:20: note: 	stmt 1 _389 = _383 + _387;
+src/sigproc.c:75:20: note: 	children 0x40c0d708 0x40c0d988
+src/sigproc.c:75:20: note: node 0x40c0d708 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _351 = _119 + _347;
+src/sigproc.c:75:20: note: 	stmt 0 _351 = _119 + _347;
+src/sigproc.c:75:20: note: 	stmt 1 _383 = _118 + _379;
+src/sigproc.c:75:20: note: 	children 0x40c0d788 0x40c0d808
+src/sigproc.c:75:20: note: node 0x40c0d788 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _119 = MEM[(const float *)_18 + -4B];
+src/sigproc.c:75:20: note: 	stmt 0 _119 = MEM[(const float *)_18 + -4B];
+src/sigproc.c:75:20: note: 	stmt 1 _118 = *_18;
+src/sigproc.c:75:20: note: node 0x40c0d808 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _347 = _342 + _346;
+src/sigproc.c:75:20: note: 	stmt 0 _347 = _342 + _346;
+src/sigproc.c:75:20: note: 	stmt 1 _379 = _374 + _378;
+src/sigproc.c:75:20: note: 	children 0x40c0d888 0x40c0d908
+src/sigproc.c:75:20: note: node 0x40c0d888 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _342 = *_341;
+src/sigproc.c:75:20: note: 	stmt 0 _342 = *_341;
+src/sigproc.c:75:20: note: 	stmt 1 _374 = *_373;
+src/sigproc.c:75:20: note: node 0x40c0d908 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _346 = *_345;
+src/sigproc.c:75:20: note: 	stmt 0 _346 = *_345;
+src/sigproc.c:75:20: note: 	stmt 1 _378 = *_377;
+src/sigproc.c:75:20: note: node 0x40c0d988 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _355 = *_354;
+src/sigproc.c:75:20: note: 	stmt 0 _355 = *_354;
+src/sigproc.c:75:20: note: 	stmt 1 _387 = *_386;
+src/sigproc.c:75:20: note: node 0x40c0da08 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _358 = _118 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 0 _358 = _118 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 1 _390 = _355 * 4.0e+0;
+src/sigproc.c:75:20: note: 	children 0x40c0d508 0x40c0da88
+src/sigproc.c:75:20: note: node (constant) 0x40c0da88 (max_nunits=1, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: 	{ 4.0e+0, 4.0e+0 }
+src/sigproc.c:75:20: note: node (constant) 0x40c0db08 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ 2.0000000298023223876953125e-1, 2.0000000298023223876953125e-1 }
+src/sigproc.c:75:20: note: Cost model analysis: 
+src/sigproc.c:75:20: note: Cost model analysis for part in loop 1:
+  Vector cost: 200
+  Scalar cost: 304
+src/sigproc.c:75:20: note: Costing subgraph: 
+src/sigproc.c:75:20: note: node 0x40c0db88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_433 = _434;
+src/sigproc.c:75:20: note: 	stmt 0 *_433 = _434;
+src/sigproc.c:75:20: note: 	stmt 1 *_465 = _466;
+src/sigproc.c:75:20: note: 	children 0x40c0de88
+src/sigproc.c:75:20: note: node (external) 0x40c0de88 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _434, _466 }
+src/sigproc.c:75:20: note: Cost model analysis: 
+src/sigproc.c:75:20: note: Cost model analysis for part in loop 1:
+  Vector cost: 16
+  Scalar cost: 24
+src/sigproc.c:75:20: note: Costing subgraph: 
+src/sigproc.c:75:20: note: node 0x40c0dd88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_195 = _196;
+src/sigproc.c:75:20: note: 	stmt 0 *_195 = _196;
+src/sigproc.c:75:20: note: 	stmt 1 *_157 = _158;
+src/sigproc.c:75:20: note: 	children 0x40c0df08
+src/sigproc.c:75:20: note: node 0x40c0df08 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _196 = _192 + _457;
+src/sigproc.c:75:20: note: 	stmt 0 _196 = _192 + _457;
+src/sigproc.c:75:20: note: 	stmt 1 _158 = _152 + _188;
+src/sigproc.c:75:20: note: 	children 0x40c0df88 0x40c0e688
+src/sigproc.c:75:20: note: node 0x40c0df88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _192 = _191 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	stmt 0 _192 = _191 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	stmt 1 _152 = _150 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	children 0x40c0e008 0x40c0e608
+src/sigproc.c:75:20: note: node 0x40c0e008 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _191 = _189 - _190;
+src/sigproc.c:75:20: note: 	stmt 0 _191 = _189 - _190;
+src/sigproc.c:75:20: note: 	stmt 1 _150 = _114 - _51;
+src/sigproc.c:75:20: note: 	children 0x40c0e088 0x40c0e408
+src/sigproc.c:75:20: note: node 0x40c0e088 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _189 = _184 + _188;
+src/sigproc.c:75:20: note: 	stmt 0 _189 = _184 + _188;
+src/sigproc.c:75:20: note: 	stmt 1 _114 = _68 + _153;
+src/sigproc.c:75:20: note: 	children 0x40c0e108 0x40c0e388
+src/sigproc.c:75:20: note: node 0x40c0e108 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _184 = _180 + _425;
+src/sigproc.c:75:20: note: 	stmt 0 _184 = _180 + _425;
+src/sigproc.c:75:20: note: 	stmt 1 _68 = _261 + _457;
+src/sigproc.c:75:20: note: 	children 0x40c0e188 0x40c0e308
+src/sigproc.c:75:20: note: node 0x40c0e188 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _180 = _175 + _179;
+src/sigproc.c:75:20: note: 	stmt 0 _180 = _175 + _179;
+src/sigproc.c:75:20: note: 	stmt 1 _261 = _245 + _260;
+src/sigproc.c:75:20: note: 	children 0x40c0e208 0x40c0e288
+src/sigproc.c:75:20: note: node 0x40c0e208 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _175 = *_174;
+src/sigproc.c:75:20: note: 	stmt 0 _175 = *_174;
+src/sigproc.c:75:20: note: 	stmt 1 _245 = *_244;
+src/sigproc.c:75:20: note: node 0x40c0e288 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _179 = *_178;
+src/sigproc.c:75:20: note: 	stmt 0 _179 = *_178;
+src/sigproc.c:75:20: note: 	stmt 1 _260 = *_259;
+src/sigproc.c:75:20: note: node 0x40c0e308 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _425 = *_424;
+src/sigproc.c:75:20: note: 	stmt 0 _425 = *_424;
+src/sigproc.c:75:20: note: 	stmt 1 _457 = *_456;
+src/sigproc.c:75:20: note: node 0x40c0e388 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _188 = *_187;
+src/sigproc.c:75:20: note: 	stmt 0 _188 = *_187;
+src/sigproc.c:75:20: note: 	stmt 1 _153 = *_55;
+src/sigproc.c:75:20: note: node 0x40c0e408 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _190 = _457 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 0 _190 = _457 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 1 _51 = _188 * 4.0e+0;
+src/sigproc.c:75:20: note: 	children 0x40c0e508 0x40c0e588
+src/sigproc.c:75:20: note: node (external) 0x40c0e508 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _457, _188 }
+src/sigproc.c:75:20: note: node (constant) 0x40c0e588 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ 4.0e+0, 4.0e+0 }
+src/sigproc.c:75:20: note: node (constant) 0x40c0e608 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ 2.0000000298023223876953125e-1, 2.0000000298023223876953125e-1 }
+src/sigproc.c:75:20: note: node (external) 0x40c0e688 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _457, _188 }
+src/sigproc.c:75:20: note: Cost model analysis: 
+src/sigproc.c:75:20: note: Cost model analysis for part in loop 1:
+  Vector cost: 192
+  Scalar cost: 292
+src/sigproc.c:75:20: note: Basic block will be vectorized using SLP
+src/sigproc.c:75:20: note: Vectorizing SLP tree:
+src/sigproc.c:75:20: note: node 0x40c0d408 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_363 = _364;
+src/sigproc.c:75:20: note: 	stmt 0 *_363 = _364;
+src/sigproc.c:75:20: note: 	stmt 1 *_395 = _396;
+src/sigproc.c:75:20: note: 	children 0x40c0d488
+src/sigproc.c:75:20: note: node 0x40c0d488 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _364 = _118 + _360;
+src/sigproc.c:75:20: note: 	stmt 0 _364 = _118 + _360;
+src/sigproc.c:75:20: note: 	stmt 1 _396 = _355 + _392;
+src/sigproc.c:75:20: note: 	children 0x40c0d508 0x40c0d588
+src/sigproc.c:75:20: note: node 0x40c0d508 (max_nunits=2, refcnt=2) const vector(2) float
+src/sigproc.c:75:20: note: op template: _118 = *_18;
+src/sigproc.c:75:20: note: 	stmt 0 _118 = *_18;
+src/sigproc.c:75:20: note: 	stmt 1 _355 = *_354;
+src/sigproc.c:75:20: note: node 0x40c0d588 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _360 = _359 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	stmt 0 _360 = _359 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	stmt 1 _392 = _391 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	children 0x40c0d608 0x40c0db08
+src/sigproc.c:75:20: note: node 0x40c0d608 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _359 = _357 - _358;
+src/sigproc.c:75:20: note: 	stmt 0 _359 = _357 - _358;
+src/sigproc.c:75:20: note: 	stmt 1 _391 = _389 - _390;
+src/sigproc.c:75:20: note: 	children 0x40c0d688 0x40c0da08
+src/sigproc.c:75:20: note: node 0x40c0d688 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _357 = _351 + _355;
+src/sigproc.c:75:20: note: 	stmt 0 _357 = _351 + _355;
+src/sigproc.c:75:20: note: 	stmt 1 _389 = _383 + _387;
+src/sigproc.c:75:20: note: 	children 0x40c0d708 0x40c0d988
+src/sigproc.c:75:20: note: node 0x40c0d708 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _351 = _119 + _347;
+src/sigproc.c:75:20: note: 	stmt 0 _351 = _119 + _347;
+src/sigproc.c:75:20: note: 	stmt 1 _383 = _118 + _379;
+src/sigproc.c:75:20: note: 	children 0x40c0d788 0x40c0d808
+src/sigproc.c:75:20: note: node 0x40c0d788 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _119 = MEM[(const float *)_18 + -4B];
+src/sigproc.c:75:20: note: 	stmt 0 _119 = MEM[(const float *)_18 + -4B];
+src/sigproc.c:75:20: note: 	stmt 1 _118 = *_18;
+src/sigproc.c:75:20: note: node 0x40c0d808 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _347 = _342 + _346;
+src/sigproc.c:75:20: note: 	stmt 0 _347 = _342 + _346;
+src/sigproc.c:75:20: note: 	stmt 1 _379 = _374 + _378;
+src/sigproc.c:75:20: note: 	children 0x40c0d888 0x40c0d908
+src/sigproc.c:75:20: note: node 0x40c0d888 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _342 = *_341;
+src/sigproc.c:75:20: note: 	stmt 0 _342 = *_341;
+src/sigproc.c:75:20: note: 	stmt 1 _374 = *_373;
+src/sigproc.c:75:20: note: node 0x40c0d908 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _346 = *_345;
+src/sigproc.c:75:20: note: 	stmt 0 _346 = *_345;
+src/sigproc.c:75:20: note: 	stmt 1 _378 = *_377;
+src/sigproc.c:75:20: note: node 0x40c0d988 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _355 = *_354;
+src/sigproc.c:75:20: note: 	stmt 0 _355 = *_354;
+src/sigproc.c:75:20: note: 	stmt 1 _387 = *_386;
+src/sigproc.c:75:20: note: node 0x40c0da08 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _358 = _118 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 0 _358 = _118 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 1 _390 = _355 * 4.0e+0;
+src/sigproc.c:75:20: note: 	children 0x40c0d508 0x40c0da88
+src/sigproc.c:75:20: note: node (constant) 0x40c0da88 (max_nunits=1, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: 	{ 4.0e+0, 4.0e+0 }
+src/sigproc.c:75:20: note: node (constant) 0x40c0db08 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ 2.0000000298023223876953125e-1, 2.0000000298023223876953125e-1 }
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _118 = *_18;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_18
+src/sigproc.c:75:20: note: created vectp.87_333
+src/sigproc.c:75:20: note: add new stmt: vect__118.88_334 = MEM <const vector(2) float> [(const float *)vectp.87_333];
+src/sigproc.c:75:20: note: add new stmt: vectp.87_335 = vectp.87_333 + 8;
+src/sigproc.c:75:20: note: extracting lane for live stmt _355 = *_354;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _119 = MEM[(const float *)_18 + -4B];
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: MEM[(const float *)_18 + -4B]
+src/sigproc.c:75:20: note: created vectp.90_338
+src/sigproc.c:75:20: note: add new stmt: vect__119.91_350 = MEM <const vector(2) float> [(const float *)vectp.90_338];
+src/sigproc.c:75:20: note: add new stmt: vectp.90_356 = vectp.90_338 + 8;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _342 = *_341;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_341
+src/sigproc.c:75:20: note: created vectp.93_361
+src/sigproc.c:75:20: note: add new stmt: vect__342.94_362 = MEM <const vector(2) float> [(const float *)vectp.93_361];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _346 = *_345;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_345
+src/sigproc.c:75:20: note: created vectp.96_366
+src/sigproc.c:75:20: note: add new stmt: vect__346.97_367 = MEM <const vector(2) float> [(const float *)vectp.96_366];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _347 = _342 + _346;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_341, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_345, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__347.98_368 = vect__342.94_362 + vect__346.97_367;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _351 = _119 + _347;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand MEM[(const float *)_18 + -4B], type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _342 + _346, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__351.99_369 = vect__119.91_350 + vect__347.98_368;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _355 = *_354;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_354
+src/sigproc.c:75:20: note: created vectp.101_370
+src/sigproc.c:75:20: note: add new stmt: vect__355.102_380 = MEM <const vector(2) float> [(const float *)vectp.101_370];
+src/sigproc.c:75:20: note: add new stmt: vectp.101_381 = vectp.101_370 + 8;
+src/sigproc.c:75:20: note: extracting lane for live stmt _355 = *_354;
+src/sigproc.c:75:20: note: extracting lane for live stmt _387 = *_386;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _357 = _351 + _355;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _119 + _347, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_354, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__357.103_400 = vect__351.99_369 + vect__355.102_380;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _358 = _118 * 4.0e+0;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_18, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__358.104_402 = vect__118.88_334 * { 4.0e+0, 4.0e+0 };
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _359 = _357 - _358;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _351 + _355, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _118 * 4.0e+0, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__359.105_403 = vect__357.103_400 - vect__358.104_402;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _360 = _359 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _357 - _358, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__360.106_404 = vect__359.105_403 * { 2.0000000298023223876953125e-1, 2.0000000298023223876953125e-1 };
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _364 = _118 + _360;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_18, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _359 * 2.0000000298023223876953125e-1, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__364.107_408 = vect__118.88_334 + vect__360.106_404;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: *_363 = _364;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _118 + _360, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _355 + _392, type of def: internal
+src/sigproc.c:75:20: note: transform store. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *_363
+src/sigproc.c:75:20: note: created vectp.109_420
+src/sigproc.c:75:20: note: add new stmt: MEM <vector(2) float> [(float *)vectp.109_420] = vect__364.107_408;
+src/sigproc.c:75:20: note: vectorizing stmts using SLP.
+src/sigproc.c:75:20: optimized: basic block part vectorized using 32 byte vectors
+src/sigproc.c:75:20: note: Vectorizing SLP tree:
+src/sigproc.c:75:20: note: node 0x40c0db88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_433 = _434;
+src/sigproc.c:75:20: note: 	stmt 0 *_433 = _434;
+src/sigproc.c:75:20: note: 	stmt 1 *_465 = _466;
+src/sigproc.c:75:20: note: 	children 0x40c0de88
+src/sigproc.c:75:20: note: node (external) 0x40c0de88 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _434, _466 }
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: *_433 = _434;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _425 + _462, type of def: internal
+src/sigproc.c:75:20: note: transform store. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *_433
+src/sigproc.c:75:20: note: created vectp.111_452
+src/sigproc.c:75:20: note: add new stmt: MEM <vector(2) float> [(float *)vectp.111_452] = _440;
+src/sigproc.c:75:20: note: vectorizing stmts using SLP.
+src/sigproc.c:75:20: optimized: basic block part vectorized using 32 byte vectors
+src/sigproc.c:75:20: note: Vectorizing SLP tree:
+src/sigproc.c:75:20: note: node 0x40c0dd88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_195 = _196;
+src/sigproc.c:75:20: note: 	stmt 0 *_195 = _196;
+src/sigproc.c:75:20: note: 	stmt 1 *_157 = _158;
+src/sigproc.c:75:20: note: 	children 0x40c0df08
+src/sigproc.c:75:20: note: node 0x40c0df08 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _196 = _192 + _457;
+src/sigproc.c:75:20: note: 	stmt 0 _196 = _192 + _457;
+src/sigproc.c:75:20: note: 	stmt 1 _158 = _152 + _188;
+src/sigproc.c:75:20: note: 	children 0x40c0df88 0x40c0e688
+src/sigproc.c:75:20: note: node 0x40c0df88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _192 = _191 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	stmt 0 _192 = _191 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	stmt 1 _152 = _150 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: 	children 0x40c0e008 0x40c0e608
+src/sigproc.c:75:20: note: node 0x40c0e008 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _191 = _189 - _190;
+src/sigproc.c:75:20: note: 	stmt 0 _191 = _189 - _190;
+src/sigproc.c:75:20: note: 	stmt 1 _150 = _114 - _51;
+src/sigproc.c:75:20: note: 	children 0x40c0e088 0x40c0e408
+src/sigproc.c:75:20: note: node 0x40c0e088 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _189 = _184 + _188;
+src/sigproc.c:75:20: note: 	stmt 0 _189 = _184 + _188;
+src/sigproc.c:75:20: note: 	stmt 1 _114 = _68 + _153;
+src/sigproc.c:75:20: note: 	children 0x40c0e108 0x40c0e388
+src/sigproc.c:75:20: note: node 0x40c0e108 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _184 = _180 + _425;
+src/sigproc.c:75:20: note: 	stmt 0 _184 = _180 + _425;
+src/sigproc.c:75:20: note: 	stmt 1 _68 = _261 + _457;
+src/sigproc.c:75:20: note: 	children 0x40c0e188 0x40c0e308
+src/sigproc.c:75:20: note: node 0x40c0e188 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _180 = _175 + _179;
+src/sigproc.c:75:20: note: 	stmt 0 _180 = _175 + _179;
+src/sigproc.c:75:20: note: 	stmt 1 _261 = _245 + _260;
+src/sigproc.c:75:20: note: 	children 0x40c0e208 0x40c0e288
+src/sigproc.c:75:20: note: node 0x40c0e208 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _175 = *_174;
+src/sigproc.c:75:20: note: 	stmt 0 _175 = *_174;
+src/sigproc.c:75:20: note: 	stmt 1 _245 = *_244;
+src/sigproc.c:75:20: note: node 0x40c0e288 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _179 = *_178;
+src/sigproc.c:75:20: note: 	stmt 0 _179 = *_178;
+src/sigproc.c:75:20: note: 	stmt 1 _260 = *_259;
+src/sigproc.c:75:20: note: node 0x40c0e308 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _425 = *_424;
+src/sigproc.c:75:20: note: 	stmt 0 _425 = *_424;
+src/sigproc.c:75:20: note: 	stmt 1 _457 = *_456;
+src/sigproc.c:75:20: note: node 0x40c0e388 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _188 = *_187;
+src/sigproc.c:75:20: note: 	stmt 0 _188 = *_187;
+src/sigproc.c:75:20: note: 	stmt 1 _153 = *_55;
+src/sigproc.c:75:20: note: node 0x40c0e408 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _190 = _457 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 0 _190 = _457 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 1 _51 = _188 * 4.0e+0;
+src/sigproc.c:75:20: note: 	children 0x40c0e508 0x40c0e588
+src/sigproc.c:75:20: note: node (external) 0x40c0e508 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _457, _188 }
+src/sigproc.c:75:20: note: node (constant) 0x40c0e588 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ 4.0e+0, 4.0e+0 }
+src/sigproc.c:75:20: note: node (constant) 0x40c0e608 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ 2.0000000298023223876953125e-1, 2.0000000298023223876953125e-1 }
+src/sigproc.c:75:20: note: node (external) 0x40c0e688 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _457, _188 }
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _175 = *_174;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_174
+src/sigproc.c:75:20: note: created vectp.113_166
+src/sigproc.c:75:20: note: add new stmt: vect__175.114_122 = MEM <const vector(2) float> [(const float *)vectp.113_166];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _179 = *_178;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_178
+src/sigproc.c:75:20: note: created vectp.116_121
+src/sigproc.c:75:20: note: add new stmt: vect__179.117_161 = MEM <const vector(2) float> [(const float *)vectp.116_121];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _180 = _175 + _179;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_174, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_178, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__180.118_171 = vect__175.114_122 + vect__179.117_161;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _425 = *_424;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_424
+src/sigproc.c:75:20: note: created vectp.120_183
+src/sigproc.c:75:20: note: add new stmt: vect__425.121_120 = MEM <const vector(2) float> [(const float *)vectp.120_183];
+src/sigproc.c:75:20: note: extracting lane for live stmt _457 = *_456;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _184 = _180 + _425;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _175 + _179, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_424, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__184.122_149 = vect__180.118_171 + vect__425.121_120;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _188 = *_187;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_187
+src/sigproc.c:75:20: note: created vectp.124_154
+src/sigproc.c:75:20: note: add new stmt: vect__188.125_113 = MEM <const vector(2) float> [(const float *)vectp.124_154];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _189 = _184 + _188;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _180 + _425, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_187, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__189.126_297 = vect__184.122_149 + vect__188.125_113;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _190 = _457 * 4.0e+0;
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__190.127_472 = _33 * { 4.0e+0, 4.0e+0 };
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _191 = _189 - _190;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _184 + _188, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _457 * 4.0e+0, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__191.128_473 = vect__189.126_297 - vect__190.127_472;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _192 = _191 * 2.0000000298023223876953125e-1;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _189 - _190, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__192.129_474 = vect__191.128_473 * { 2.0000000298023223876953125e-1, 2.0000000298023223876953125e-1 };
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _196 = _192 + _457;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _191 * 2.0000000298023223876953125e-1, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__196.130_476 = vect__192.129_474 + _475;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: *_195 = _196;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _192 + _457, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _152 + _188, type of def: internal
+src/sigproc.c:75:20: note: transform store. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *_195
+src/sigproc.c:75:20: note: created vectp.132_477
+src/sigproc.c:75:20: note: add new stmt: MEM <vector(2) float> [(float *)vectp.132_477] = vect__196.130_476;
+src/sigproc.c:75:20: note: vectorizing stmts using SLP.
+src/sigproc.c:75:20: optimized: basic block part vectorized using 32 byte vectors
+src/sigproc.c:75:20: note: ***** The result for vector mode V32QI would be the same
+src/sigproc.c:42:23: missed: couldn't vectorize loop
+src/sigproc.c:43:11: missed: not vectorized: unsupported use in stmt.
+src/sigproc.c:39:12: note: vectorized 0 loops in function.
+src/sigproc.c:45:11: note: ***** Analysis failed with vector mode V8SI
+src/sigproc.c:45:11: note: ***** The result for vector mode V32QI would be the same
+src/sigproc.c:45:11: note: ***** Re-trying analysis with vector mode V16QI
+src/sigproc.c:45:11: note: ***** Analysis failed with vector mode V16QI
+src/sigproc.c:45:11: note: ***** Re-trying analysis with vector mode V8QI
+src/sigproc.c:45:11: note: ***** Analysis failed with vector mode V8QI
+src/sigproc.c:45:11: note: ***** Re-trying analysis with vector mode V4QI
+src/sigproc.c:45:11: note: ***** Analysis failed with vector mode V4QI
+src/sigproc.c:58:23: missed: couldn't vectorize loop
+src/sigproc.c:59:21: missed: not vectorized: complicated access pattern.
+src/sigproc.c:61:27: optimized: loop vectorized using 32 byte vectors
+src/sigproc.c:61:27: optimized: loop vectorized using 16 byte vectors
+src/sigproc.c:54:12: note: vectorized 1 loops in function.
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin_memset (y_20(D), 0, _2);
+src/sigproc.c:54:12: note: ***** Analysis failed with vector mode V8SF
+src/sigproc.c:54:12: note: ***** The result for vector mode V32QI would be the same
+src/sigproc.c:54:12: note: ***** Re-trying analysis with vector mode V16QI
+src/sigproc.c:54:12: note: ***** Analysis failed with vector mode V16QI
+src/sigproc.c:54:12: note: ***** Re-trying analysis with vector mode V8QI
+src/sigproc.c:54:12: note: ***** Analysis failed with vector mode V8QI
+src/sigproc.c:54:12: note: ***** Re-trying analysis with vector mode V4QI
+src/sigproc.c:54:12: note: ***** Analysis failed with vector mode V4QI
+src/sigproc.c:69:23: missed: couldn't vectorize loop
+src/sigproc.c:75:38: missed: not vectorized: complicated access pattern.
+src/sigproc.c:74:27: optimized: loop vectorized using 32 byte vectors
+src/sigproc.c:74:27: optimized: loop vectorized using 16 byte vectors
+src/sigproc.c:67:12: note: vectorized 1 loops in function.
+src/sigproc.c:75:20: note: ***** Analysis succeeded with vector mode V8SF
+src/sigproc.c:75:20: note: SLPing BB part
+src/sigproc.c:75:20: note: Costing subgraph: 
+src/sigproc.c:75:20: note: node 0x40c8d488 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_366 = _367;
+src/sigproc.c:75:20: note: 	stmt 0 *_366 = _367;
+src/sigproc.c:75:20: note: 	stmt 1 *_398 = _399;
+src/sigproc.c:75:20: note: 	children 0x40c8d508
+src/sigproc.c:75:20: note: node 0x40c8d508 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _367 = _135 + _363;
+src/sigproc.c:75:20: note: 	stmt 0 _367 = _135 + _363;
+src/sigproc.c:75:20: note: 	stmt 1 _399 = _358 + _395;
+src/sigproc.c:75:20: note: 	children 0x40c8d588 0x40c8d608
+src/sigproc.c:75:20: note: node 0x40c8d588 (max_nunits=2, refcnt=2) const vector(2) float
+src/sigproc.c:75:20: note: op template: _135 = *_13;
+src/sigproc.c:75:20: note: 	stmt 0 _135 = *_13;
+src/sigproc.c:75:20: note: 	stmt 1 _358 = *_357;
+src/sigproc.c:75:20: note: node 0x40c8d608 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _363 = _362 * a_46(D);
+src/sigproc.c:75:20: note: 	stmt 0 _363 = _362 * a_46(D);
+src/sigproc.c:75:20: note: 	stmt 1 _395 = _394 * a_46(D);
+src/sigproc.c:75:20: note: 	children 0x40c8d688 0x40c8db88
+src/sigproc.c:75:20: note: node 0x40c8d688 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _362 = _360 - _361;
+src/sigproc.c:75:20: note: 	stmt 0 _362 = _360 - _361;
+src/sigproc.c:75:20: note: 	stmt 1 _394 = _392 - _393;
+src/sigproc.c:75:20: note: 	children 0x40c8d708 0x40c8da88
+src/sigproc.c:75:20: note: node 0x40c8d708 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _360 = _354 + _358;
+src/sigproc.c:75:20: note: 	stmt 0 _360 = _354 + _358;
+src/sigproc.c:75:20: note: 	stmt 1 _392 = _386 + _390;
+src/sigproc.c:75:20: note: 	children 0x40c8d788 0x40c8da08
+src/sigproc.c:75:20: note: node 0x40c8d788 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _354 = _136 + _350;
+src/sigproc.c:75:20: note: 	stmt 0 _354 = _136 + _350;
+src/sigproc.c:75:20: note: 	stmt 1 _386 = _135 + _382;
+src/sigproc.c:75:20: note: 	children 0x40c8d808 0x40c8d888
+src/sigproc.c:75:20: note: node 0x40c8d808 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _136 = MEM[(const float *)_13 + -4B];
+src/sigproc.c:75:20: note: 	stmt 0 _136 = MEM[(const float *)_13 + -4B];
+src/sigproc.c:75:20: note: 	stmt 1 _135 = *_13;
+src/sigproc.c:75:20: note: node 0x40c8d888 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _350 = _345 + _349;
+src/sigproc.c:75:20: note: 	stmt 0 _350 = _345 + _349;
+src/sigproc.c:75:20: note: 	stmt 1 _382 = _377 + _381;
+src/sigproc.c:75:20: note: 	children 0x40c8d908 0x40c8d988
+src/sigproc.c:75:20: note: node 0x40c8d908 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _345 = *_344;
+src/sigproc.c:75:20: note: 	stmt 0 _345 = *_344;
+src/sigproc.c:75:20: note: 	stmt 1 _377 = *_376;
+src/sigproc.c:75:20: note: node 0x40c8d988 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _349 = *_348;
+src/sigproc.c:75:20: note: 	stmt 0 _349 = *_348;
+src/sigproc.c:75:20: note: 	stmt 1 _381 = *_380;
+src/sigproc.c:75:20: note: node 0x40c8da08 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _358 = *_357;
+src/sigproc.c:75:20: note: 	stmt 0 _358 = *_357;
+src/sigproc.c:75:20: note: 	stmt 1 _390 = *_389;
+src/sigproc.c:75:20: note: node 0x40c8da88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _361 = _135 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 0 _361 = _135 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 1 _393 = _358 * 4.0e+0;
+src/sigproc.c:75:20: note: 	children 0x40c8d588 0x40c8db08
+src/sigproc.c:75:20: note: node (constant) 0x40c8db08 (max_nunits=1, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: 	{ 4.0e+0, 4.0e+0 }
+src/sigproc.c:75:20: note: node (external) 0x40c8db88 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ a_46(D), a_46(D) }
+src/sigproc.c:75:20: note: Cost model analysis: 
+src/sigproc.c:75:20: note: Cost model analysis for part in loop 1:
+  Vector cost: 192
+  Scalar cost: 304
+src/sigproc.c:75:20: note: Costing subgraph: 
+src/sigproc.c:75:20: note: node 0x40c8dc08 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_436 = _437;
+src/sigproc.c:75:20: note: 	stmt 0 *_436 = _437;
+src/sigproc.c:75:20: note: 	stmt 1 *_468 = _469;
+src/sigproc.c:75:20: note: 	children 0x40c8df08
+src/sigproc.c:75:20: note: node (external) 0x40c8df08 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _437, _469 }
+src/sigproc.c:75:20: note: Cost model analysis: 
+src/sigproc.c:75:20: note: Cost model analysis for part in loop 1:
+  Vector cost: 16
+  Scalar cost: 24
+src/sigproc.c:75:20: note: Costing subgraph: 
+src/sigproc.c:75:20: note: node 0x40c8de08 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_196 = _197;
+src/sigproc.c:75:20: note: 	stmt 0 *_196 = _197;
+src/sigproc.c:75:20: note: 	stmt 1 *_176 = _177;
+src/sigproc.c:75:20: note: 	children 0x40c8df88
+src/sigproc.c:75:20: note: node 0x40c8df88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _197 = _193 + _460;
+src/sigproc.c:75:20: note: 	stmt 0 _197 = _193 + _460;
+src/sigproc.c:75:20: note: 	stmt 1 _177 = _173 + _189;
+src/sigproc.c:75:20: note: 	children 0x40c8e008 0x40c8e708
+src/sigproc.c:75:20: note: node 0x40c8e008 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _193 = _192 * a_46(D);
+src/sigproc.c:75:20: note: 	stmt 0 _193 = _192 * a_46(D);
+src/sigproc.c:75:20: note: 	stmt 1 _173 = _172 * a_46(D);
+src/sigproc.c:75:20: note: 	children 0x40c8e088 0x40c8e688
+src/sigproc.c:75:20: note: node 0x40c8e088 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _192 = _190 - _191;
+src/sigproc.c:75:20: note: 	stmt 0 _192 = _190 - _191;
+src/sigproc.c:75:20: note: 	stmt 1 _172 = _168 - _169;
+src/sigproc.c:75:20: note: 	children 0x40c8e108 0x40c8e488
+src/sigproc.c:75:20: note: node 0x40c8e108 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _190 = _185 + _189;
+src/sigproc.c:75:20: note: 	stmt 0 _190 = _185 + _189;
+src/sigproc.c:75:20: note: 	stmt 1 _168 = _78 + _131;
+src/sigproc.c:75:20: note: 	children 0x40c8e188 0x40c8e408
+src/sigproc.c:75:20: note: node 0x40c8e188 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _185 = _3 + _428;
+src/sigproc.c:75:20: note: 	stmt 0 _185 = _3 + _428;
+src/sigproc.c:75:20: note: 	stmt 1 _78 = _263 + _460;
+src/sigproc.c:75:20: note: 	children 0x40c8e208 0x40c8e388
+src/sigproc.c:75:20: note: node 0x40c8e208 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _3 = _38 + _34;
+src/sigproc.c:75:20: note: 	stmt 0 _3 = _38 + _34;
+src/sigproc.c:75:20: note: 	stmt 1 _263 = _246 + _262;
+src/sigproc.c:75:20: note: 	children 0x40c8e288 0x40c8e308
+src/sigproc.c:75:20: note: node 0x40c8e288 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _38 = *_53;
+src/sigproc.c:75:20: note: 	stmt 0 _38 = *_53;
+src/sigproc.c:75:20: note: 	stmt 1 _246 = *_245;
+src/sigproc.c:75:20: note: node 0x40c8e308 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _34 = *_35;
+src/sigproc.c:75:20: note: 	stmt 0 _34 = *_35;
+src/sigproc.c:75:20: note: 	stmt 1 _262 = *_261;
+src/sigproc.c:75:20: note: node 0x40c8e388 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _428 = *_427;
+src/sigproc.c:75:20: note: 	stmt 0 _428 = *_427;
+src/sigproc.c:75:20: note: 	stmt 1 _460 = *_459;
+src/sigproc.c:75:20: note: node 0x40c8e408 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _189 = *_188;
+src/sigproc.c:75:20: note: 	stmt 0 _189 = *_188;
+src/sigproc.c:75:20: note: 	stmt 1 _131 = *_171;
+src/sigproc.c:75:20: note: node 0x40c8e488 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _191 = _460 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 0 _191 = _460 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 1 _169 = _189 * 4.0e+0;
+src/sigproc.c:75:20: note: 	children 0x40c8e588 0x40c8e608
+src/sigproc.c:75:20: note: node (external) 0x40c8e588 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _460, _189 }
+src/sigproc.c:75:20: note: node (constant) 0x40c8e608 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ 4.0e+0, 4.0e+0 }
+src/sigproc.c:75:20: note: node (external) 0x40c8e688 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ a_46(D), a_46(D) }
+src/sigproc.c:75:20: note: node (external) 0x40c8e708 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _460, _189 }
+src/sigproc.c:75:20: note: Cost model analysis: 
+src/sigproc.c:75:20: note: Cost model analysis for part in loop 1:
+  Vector cost: 184
+  Scalar cost: 292
+src/sigproc.c:75:20: note: Basic block will be vectorized using SLP
+src/sigproc.c:75:20: note: Vectorizing SLP tree:
+src/sigproc.c:75:20: note: node 0x40c8d488 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_366 = _367;
+src/sigproc.c:75:20: note: 	stmt 0 *_366 = _367;
+src/sigproc.c:75:20: note: 	stmt 1 *_398 = _399;
+src/sigproc.c:75:20: note: 	children 0x40c8d508
+src/sigproc.c:75:20: note: node 0x40c8d508 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _367 = _135 + _363;
+src/sigproc.c:75:20: note: 	stmt 0 _367 = _135 + _363;
+src/sigproc.c:75:20: note: 	stmt 1 _399 = _358 + _395;
+src/sigproc.c:75:20: note: 	children 0x40c8d588 0x40c8d608
+src/sigproc.c:75:20: note: node 0x40c8d588 (max_nunits=2, refcnt=2) const vector(2) float
+src/sigproc.c:75:20: note: op template: _135 = *_13;
+src/sigproc.c:75:20: note: 	stmt 0 _135 = *_13;
+src/sigproc.c:75:20: note: 	stmt 1 _358 = *_357;
+src/sigproc.c:75:20: note: node 0x40c8d608 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _363 = _362 * a_46(D);
+src/sigproc.c:75:20: note: 	stmt 0 _363 = _362 * a_46(D);
+src/sigproc.c:75:20: note: 	stmt 1 _395 = _394 * a_46(D);
+src/sigproc.c:75:20: note: 	children 0x40c8d688 0x40c8db88
+src/sigproc.c:75:20: note: node 0x40c8d688 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _362 = _360 - _361;
+src/sigproc.c:75:20: note: 	stmt 0 _362 = _360 - _361;
+src/sigproc.c:75:20: note: 	stmt 1 _394 = _392 - _393;
+src/sigproc.c:75:20: note: 	children 0x40c8d708 0x40c8da88
+src/sigproc.c:75:20: note: node 0x40c8d708 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _360 = _354 + _358;
+src/sigproc.c:75:20: note: 	stmt 0 _360 = _354 + _358;
+src/sigproc.c:75:20: note: 	stmt 1 _392 = _386 + _390;
+src/sigproc.c:75:20: note: 	children 0x40c8d788 0x40c8da08
+src/sigproc.c:75:20: note: node 0x40c8d788 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _354 = _136 + _350;
+src/sigproc.c:75:20: note: 	stmt 0 _354 = _136 + _350;
+src/sigproc.c:75:20: note: 	stmt 1 _386 = _135 + _382;
+src/sigproc.c:75:20: note: 	children 0x40c8d808 0x40c8d888
+src/sigproc.c:75:20: note: node 0x40c8d808 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _136 = MEM[(const float *)_13 + -4B];
+src/sigproc.c:75:20: note: 	stmt 0 _136 = MEM[(const float *)_13 + -4B];
+src/sigproc.c:75:20: note: 	stmt 1 _135 = *_13;
+src/sigproc.c:75:20: note: node 0x40c8d888 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _350 = _345 + _349;
+src/sigproc.c:75:20: note: 	stmt 0 _350 = _345 + _349;
+src/sigproc.c:75:20: note: 	stmt 1 _382 = _377 + _381;
+src/sigproc.c:75:20: note: 	children 0x40c8d908 0x40c8d988
+src/sigproc.c:75:20: note: node 0x40c8d908 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _345 = *_344;
+src/sigproc.c:75:20: note: 	stmt 0 _345 = *_344;
+src/sigproc.c:75:20: note: 	stmt 1 _377 = *_376;
+src/sigproc.c:75:20: note: node 0x40c8d988 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _349 = *_348;
+src/sigproc.c:75:20: note: 	stmt 0 _349 = *_348;
+src/sigproc.c:75:20: note: 	stmt 1 _381 = *_380;
+src/sigproc.c:75:20: note: node 0x40c8da08 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _358 = *_357;
+src/sigproc.c:75:20: note: 	stmt 0 _358 = *_357;
+src/sigproc.c:75:20: note: 	stmt 1 _390 = *_389;
+src/sigproc.c:75:20: note: node 0x40c8da88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _361 = _135 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 0 _361 = _135 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 1 _393 = _358 * 4.0e+0;
+src/sigproc.c:75:20: note: 	children 0x40c8d588 0x40c8db08
+src/sigproc.c:75:20: note: node (constant) 0x40c8db08 (max_nunits=1, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: 	{ 4.0e+0, 4.0e+0 }
+src/sigproc.c:75:20: note: node (external) 0x40c8db88 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ a_46(D), a_46(D) }
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _135 = *_13;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_13
+src/sigproc.c:75:20: note: created vectp.324_336
+src/sigproc.c:75:20: note: add new stmt: vect__135.325_337 = MEM <const vector(2) float> [(const float *)vectp.324_336];
+src/sigproc.c:75:20: note: add new stmt: vectp.324_338 = vectp.324_336 + 8;
+src/sigproc.c:75:20: note: extracting lane for live stmt _358 = *_357;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _136 = MEM[(const float *)_13 + -4B];
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: MEM[(const float *)_13 + -4B]
+src/sigproc.c:75:20: note: created vectp.327_341
+src/sigproc.c:75:20: note: add new stmt: vect__136.328_353 = MEM <const vector(2) float> [(const float *)vectp.327_341];
+src/sigproc.c:75:20: note: add new stmt: vectp.327_359 = vectp.327_341 + 8;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _345 = *_344;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_344
+src/sigproc.c:75:20: note: created vectp.330_364
+src/sigproc.c:75:20: note: add new stmt: vect__345.331_365 = MEM <const vector(2) float> [(const float *)vectp.330_364];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _349 = *_348;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_348
+src/sigproc.c:75:20: note: created vectp.333_369
+src/sigproc.c:75:20: note: add new stmt: vect__349.334_370 = MEM <const vector(2) float> [(const float *)vectp.333_369];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _350 = _345 + _349;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_344, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_348, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__350.335_371 = vect__345.331_365 + vect__349.334_370;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _354 = _136 + _350;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand MEM[(const float *)_13 + -4B], type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _345 + _349, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__354.336_372 = vect__136.328_353 + vect__350.335_371;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _358 = *_357;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_357
+src/sigproc.c:75:20: note: created vectp.338_373
+src/sigproc.c:75:20: note: add new stmt: vect__358.339_383 = MEM <const vector(2) float> [(const float *)vectp.338_373];
+src/sigproc.c:75:20: note: add new stmt: vectp.338_384 = vectp.338_373 + 8;
+src/sigproc.c:75:20: note: extracting lane for live stmt _358 = *_357;
+src/sigproc.c:75:20: note: extracting lane for live stmt _390 = *_389;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _360 = _354 + _358;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _136 + _350, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_357, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__360.340_403 = vect__354.336_372 + vect__358.339_383;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _361 = _135 * 4.0e+0;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_13, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__361.341_405 = vect__135.325_337 * { 4.0e+0, 4.0e+0 };
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _362 = _360 - _361;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _354 + _358, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _135 * 4.0e+0, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__362.342_406 = vect__360.340_403 - vect__361.341_405;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _363 = _362 * a_46(D);
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _360 - _361, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__363.343_411 = vect__362.342_406 * _407;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _367 = _135 + _363;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_13, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _362 * a_46(D), type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__367.344_423 = vect__135.325_337 + vect__363.343_411;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: *_366 = _367;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _135 + _363, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _358 + _395, type of def: internal
+src/sigproc.c:75:20: note: transform store. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *_366
+src/sigproc.c:75:20: note: created vectp.346_429
+src/sigproc.c:75:20: note: add new stmt: MEM <vector(2) float> [(float *)vectp.346_429] = vect__367.344_423;
+src/sigproc.c:75:20: note: vectorizing stmts using SLP.
+src/sigproc.c:75:20: optimized: basic block part vectorized using 32 byte vectors
+src/sigproc.c:75:20: note: Vectorizing SLP tree:
+src/sigproc.c:75:20: note: node 0x40c8dc08 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_436 = _437;
+src/sigproc.c:75:20: note: 	stmt 0 *_436 = _437;
+src/sigproc.c:75:20: note: 	stmt 1 *_468 = _469;
+src/sigproc.c:75:20: note: 	children 0x40c8df08
+src/sigproc.c:75:20: note: node (external) 0x40c8df08 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _437, _469 }
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: *_436 = _437;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _428 + _465, type of def: internal
+src/sigproc.c:75:20: note: transform store. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *_436
+src/sigproc.c:75:20: note: created vectp.348_461
+src/sigproc.c:75:20: note: add new stmt: MEM <vector(2) float> [(float *)vectp.348_461] = _455;
+src/sigproc.c:75:20: note: vectorizing stmts using SLP.
+src/sigproc.c:75:20: optimized: basic block part vectorized using 32 byte vectors
+src/sigproc.c:75:20: note: Vectorizing SLP tree:
+src/sigproc.c:75:20: note: node 0x40c8de08 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: *_196 = _197;
+src/sigproc.c:75:20: note: 	stmt 0 *_196 = _197;
+src/sigproc.c:75:20: note: 	stmt 1 *_176 = _177;
+src/sigproc.c:75:20: note: 	children 0x40c8df88
+src/sigproc.c:75:20: note: node 0x40c8df88 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _197 = _193 + _460;
+src/sigproc.c:75:20: note: 	stmt 0 _197 = _193 + _460;
+src/sigproc.c:75:20: note: 	stmt 1 _177 = _173 + _189;
+src/sigproc.c:75:20: note: 	children 0x40c8e008 0x40c8e708
+src/sigproc.c:75:20: note: node 0x40c8e008 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _193 = _192 * a_46(D);
+src/sigproc.c:75:20: note: 	stmt 0 _193 = _192 * a_46(D);
+src/sigproc.c:75:20: note: 	stmt 1 _173 = _172 * a_46(D);
+src/sigproc.c:75:20: note: 	children 0x40c8e088 0x40c8e688
+src/sigproc.c:75:20: note: node 0x40c8e088 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _192 = _190 - _191;
+src/sigproc.c:75:20: note: 	stmt 0 _192 = _190 - _191;
+src/sigproc.c:75:20: note: 	stmt 1 _172 = _168 - _169;
+src/sigproc.c:75:20: note: 	children 0x40c8e108 0x40c8e488
+src/sigproc.c:75:20: note: node 0x40c8e108 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _190 = _185 + _189;
+src/sigproc.c:75:20: note: 	stmt 0 _190 = _185 + _189;
+src/sigproc.c:75:20: note: 	stmt 1 _168 = _78 + _131;
+src/sigproc.c:75:20: note: 	children 0x40c8e188 0x40c8e408
+src/sigproc.c:75:20: note: node 0x40c8e188 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _185 = _3 + _428;
+src/sigproc.c:75:20: note: 	stmt 0 _185 = _3 + _428;
+src/sigproc.c:75:20: note: 	stmt 1 _78 = _263 + _460;
+src/sigproc.c:75:20: note: 	children 0x40c8e208 0x40c8e388
+src/sigproc.c:75:20: note: node 0x40c8e208 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _3 = _38 + _34;
+src/sigproc.c:75:20: note: 	stmt 0 _3 = _38 + _34;
+src/sigproc.c:75:20: note: 	stmt 1 _263 = _246 + _262;
+src/sigproc.c:75:20: note: 	children 0x40c8e288 0x40c8e308
+src/sigproc.c:75:20: note: node 0x40c8e288 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _38 = *_53;
+src/sigproc.c:75:20: note: 	stmt 0 _38 = *_53;
+src/sigproc.c:75:20: note: 	stmt 1 _246 = *_245;
+src/sigproc.c:75:20: note: node 0x40c8e308 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _34 = *_35;
+src/sigproc.c:75:20: note: 	stmt 0 _34 = *_35;
+src/sigproc.c:75:20: note: 	stmt 1 _262 = *_261;
+src/sigproc.c:75:20: note: node 0x40c8e388 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _428 = *_427;
+src/sigproc.c:75:20: note: 	stmt 0 _428 = *_427;
+src/sigproc.c:75:20: note: 	stmt 1 _460 = *_459;
+src/sigproc.c:75:20: note: node 0x40c8e408 (max_nunits=2, refcnt=1) const vector(2) float
+src/sigproc.c:75:20: note: op template: _189 = *_188;
+src/sigproc.c:75:20: note: 	stmt 0 _189 = *_188;
+src/sigproc.c:75:20: note: 	stmt 1 _131 = *_171;
+src/sigproc.c:75:20: note: node 0x40c8e488 (max_nunits=2, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: op template: _191 = _460 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 0 _191 = _460 * 4.0e+0;
+src/sigproc.c:75:20: note: 	stmt 1 _169 = _189 * 4.0e+0;
+src/sigproc.c:75:20: note: 	children 0x40c8e588 0x40c8e608
+src/sigproc.c:75:20: note: node (external) 0x40c8e588 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _460, _189 }
+src/sigproc.c:75:20: note: node (constant) 0x40c8e608 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ 4.0e+0, 4.0e+0 }
+src/sigproc.c:75:20: note: node (external) 0x40c8e688 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ a_46(D), a_46(D) }
+src/sigproc.c:75:20: note: node (external) 0x40c8e708 (max_nunits=1, refcnt=1) vector(2) float
+src/sigproc.c:75:20: note: 	{ _460, _189 }
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _38 = *_53;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_53
+src/sigproc.c:75:20: note: created vectp.350_139
+src/sigproc.c:75:20: note: add new stmt: vect__38.351_138 = MEM <const vector(2) float> [(const float *)vectp.350_139];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _34 = *_35;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_35
+src/sigproc.c:75:20: note: created vectp.353_269
+src/sigproc.c:75:20: note: add new stmt: vect__34.354_57 = MEM <const vector(2) float> [(const float *)vectp.353_269];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _3 = _38 + _34;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_53, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_35, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__3.355_184 = vect__38.351_138 + vect__34.354_57;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _428 = *_427;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_427
+src/sigproc.c:75:20: note: created vectp.357_137
+src/sigproc.c:75:20: note: add new stmt: vect__428.358_228 = MEM <const vector(2) float> [(const float *)vectp.357_137];
+src/sigproc.c:75:20: note: extracting lane for live stmt _460 = *_459;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _185 = _3 + _428;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _38 + _34, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_427, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__185.359_47 = vect__3.355_184 + vect__428.358_228;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _189 = *_188;
+src/sigproc.c:75:20: note: transform load. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: const vector(2) float  vectorizing a pointer ref: *_188
+src/sigproc.c:75:20: note: created vectp.361_130
+src/sigproc.c:75:20: note: add new stmt: vect__189.362_300 = MEM <const vector(2) float> [(const float *)vectp.361_130];
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _190 = _185 + _189;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _3 + _428, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand *_188, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__190.363_24 = vect__185.359_47 + vect__189.362_300;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _191 = _460 * 4.0e+0;
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__191.364_476 = _475 * { 4.0e+0, 4.0e+0 };
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _192 = _190 - _191;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _185 + _189, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _460 * 4.0e+0, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__192.365_477 = vect__190.363_24 - vect__191.364_476;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _193 = _192 * a_46(D);
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _190 - _191, type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__193.366_479 = vect__192.365_477 * _478;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: _197 = _193 + _460;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _192 * a_46(D), type of def: internal
+src/sigproc.c:75:20: note: transform binary/unary operation.
+src/sigproc.c:75:20: note: add new stmt: vect__197.367_481 = vect__193.366_479 + _480;
+src/sigproc.c:75:20: note: ------>vectorizing SLP node starting from: *_196 = _197;
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _193 + _460, type of def: internal
+src/sigproc.c:75:20: note: vect_is_simple_use: operand _173 + _189, type of def: internal
+src/sigproc.c:75:20: note: transform store. ncopies = 1
+src/sigproc.c:75:20: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *_196
+src/sigproc.c:75:20: note: created vectp.369_482
+src/sigproc.c:75:20: note: add new stmt: MEM <vector(2) float> [(float *)vectp.369_482] = vect__197.367_481;
+src/sigproc.c:75:20: note: vectorizing stmts using SLP.
+src/sigproc.c:75:20: optimized: basic block part vectorized using 32 byte vectors
+src/sigproc.c:75:20: note: ***** The result for vector mode V32QI would be the same
+src/sigproc.c:83:23: missed: couldn't vectorize loop
+src/sigproc.c:84:25: missed: not vectorized: no vectype for stmt: _5 = *_4;
+ scalar_type: const float
+src/sigproc.c:80:12: note: vectorized 0 loops in function.
+src/sigproc.c:91:1: note: ***** Analysis failed with vector mode V8SF
+src/sigproc.c:91:1: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V8SF
+src/sigproc.c:97:23: missed: couldn't vectorize loop
+src/sigproc.c:98:15: missed: not vectorized: no vectype for stmt: _4 = *_3;
+ scalar_type: const float
+src/sigproc.c:94:14: note: vectorized 0 loops in function.
+src/sigproc.c:99:12: note: ***** Analysis failed with vector mode V8SF
+src/sigproc.c:99:12: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V8SF
+src/sigproc.c:169:23: missed: couldn't vectorize loop
+src/sigproc.c:170:21: missed: not vectorized: unsupported use in stmt.
+src/sigproc.c:141:23: missed: couldn't vectorize loop
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:147:29: missed: couldn't vectorize loop
+src/sigproc.c:148:13: missed: statement clobbers memory: heat_step.constprop (gb_251, ga_247, iftmp.2_83);
+src/sigproc.c:131:30: missed: couldn't vectorize loop
+src/sigproc.c:133:38: missed: not vectorized: complicated access pattern.
+src/sigproc.c:132:34: optimized: loop vectorized using 32 byte vectors
+src/sigproc.c:132:34: optimized: loop vectorized using 16 byte vectors
+src/sigproc.c:126:23: optimized: loop vectorized using 32 byte vectors
+src/sigproc.c:122:23: missed: couldn't vectorize loop
+src/sigproc.c:122:23: missed: not vectorized: control flow in loop.
+src/sigproc.c:102:5: note: vectorized 2 loops in function.
+/usr/include/stdlib.h:483:16: missed: statement clobbers memory: _141 = strtol (_2, 0B, 10);
+/usr/include/stdlib.h:483:16: missed: statement clobbers memory: _164 = strtol (_4, 0B, 10);
+/usr/include/stdlib.h:483:16: missed: statement clobbers memory: _166 = strtol (_5, 0B, 10);
+src/sigproc.c:113:18: missed: statement clobbers memory: sig_115 = xalloc (_16);
+src/sigproc.c:114:18: missed: statement clobbers memory: flt_117 = xalloc (_17);
+src/sigproc.c:115:16: missed: statement clobbers memory: h_119 = xalloc (192);
+src/sigproc.c:116:17: missed: statement clobbers memory: ga_121 = xalloc (_20);
+src/sigproc.c:117:17: missed: statement clobbers memory: gb_123 = xalloc (_20);
+src/sigproc.c:118:22: missed: statement clobbers memory: hist_125 = xalloc (16384);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin_memset (ga_121, 0, _20);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:10: missed: statement clobbers memory: __builtin_memcpy (gb_123, ga_121, _20);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:143:9: missed: statement clobbers memory: synth_signal (sig_115, _290, &seed);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:145:9: missed: statement clobbers memory: fir_filter (flt_117, sig_115, h_119, n_113);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:148:13: missed: statement clobbers memory: heat_step.constprop (gb_251, ga_247, iftmp.2_83);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin_memset (hist_125, 0, 16384);
+src/sigproc.c:155:9: missed: statement clobbers memory: quantize_hist (flt_117, n_113, hist_125, -2.0000000298023223876953125e-1, 1.2000000476837158203125e+0);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:157:16: missed: statement clobbers memory: _51 = checksum (flt_117, n_113);
+src/sigproc.c:157:35: missed: statement clobbers memory: _53 = checksum (gb_297, _52);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "rounds=%d  n=2^%d  grid=%dx%d  taps=%d\n", iftmp.0_245, iftmp.1_84, iftmp.2_83, iftmp.2_83, 48);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9s %7s\n", "stage", "time, s", "share");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "synth_signal", t_syn_262, _70);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "fir_filter", t_fir_264, _72);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "heat_step", t_heat_266, _74);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "quantize_hist", t_hist_268, _76);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "checksum", t_sum_270, _78);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f\n", "TOTAL", total_128);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "result: acc=%.6e  hist=%016llx\n", acc_272, hsig_89);
+src/sigproc.c:183:5: missed: statement clobbers memory: free (sig_115);
+src/sigproc.c:184:5: missed: statement clobbers memory: free (flt_117);
+src/sigproc.c:185:5: missed: statement clobbers memory: free (h_119);
+src/sigproc.c:186:5: missed: statement clobbers memory: free (ga_250);
+src/sigproc.c:187:5: missed: statement clobbers memory: free (gb_254);
+src/sigproc.c:188:5: missed: statement clobbers memory: free (hist_125);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.3_13, 2, "usage: %s [rounds>=1] [log2n 10..28] [grid>=16]\n", _12);
+src/sigproc.c:107:20: note: ***** Analysis failed with vector mode V4DI
+src/sigproc.c:107:20: note: ***** The result for vector mode V32QI would be the same
+src/sigproc.c:107:20: note: ***** Re-trying analysis with vector mode V16QI
+src/sigproc.c:107:20: note: ***** Analysis failed with vector mode V16QI
+src/sigproc.c:107:20: note: ***** Re-trying analysis with vector mode V8QI
+src/sigproc.c:107:20: note: ***** Analysis failed with vector mode V8QI
+src/sigproc.c:107:20: note: ***** Re-trying analysis with vector mode V4QI
+src/sigproc.c:107:20: note: ***** Analysis failed with vector mode V4QI

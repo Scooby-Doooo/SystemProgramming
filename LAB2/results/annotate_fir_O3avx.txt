@@ -1,0 +1,161 @@
+ Percent |	Source code & Disassembly of sigproc_O3avx for cpu-clock:u (1501 samples, percent: local period)
+----------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    0000000000002170 <fir_filter>:
+         : 6    }
+         :
+         : 8    /* 2. FIR filter; loops swapped so the inner one vectorizes (FMA) */
+         : 9    STAGE void fir_filter(float *restrict y, const float *restrict x,
+         : 10   const float *restrict h, int n)
+         : 11   {
+    0.00 :   2170:   endbr64
+    0.00 :   2174:   push   %rbp
+    0.00 :   2175:   mov    %rsp,%rbp
+    0.00 :   2178:   push   %r15
+    0.00 :   217a:   push   %r14
+    0.00 :   217c:   push   %r13
+    0.00 :   217e:   push   %r12
+    0.00 :   2180:   mov    %rdx,%r12
+    0.00 :   2183:   movslq %ecx,%rdx
+    0.00 :   2186:   push   %rbx
+    0.00 :   2187:   mov    %rdx,%r13
+    0.00 :   218a:   mov    %rsi,%rbx
+         : 24   memset(y, 0, (size_t)n * sizeof(float));
+    0.00 :   218d:   shl    $0x2,%rdx
+         : 26   case no work is done at all.  We detect these problems by referring
+         : 27   non-existing functions.  */
+         : 28   __fortify_function void *
+         : 29   __NTH (memset (void *__dest, int __ch, size_t __len))
+         : 30   {
+         : 31   return __builtin___memset_chk (__dest, __ch, __len,
+    0.00 :   2191:   xor    %esi,%esi
+         : 33   {
+    0.00 :   2193:   and    $0xffffffffffffffe0,%rsp
+    0.00 :   2197:   call   1120 <memset@plt>
+         : 36   for (int k = 0; k < FIR_TAPS; k++) {
+    0.00 :   219c:   test   %r13d,%r13d
+    0.00 :   219f:   jle    2308 <fir_filter+0x198>
+    0.00 :   21a5:   mov    %r13d,%r8d
+    0.00 :   21a8:   mov    %r13d,%r9d
+    0.00 :   21ab:   mov    %rax,%rdi
+    0.00 :   21ae:   mov    %rbx,%rcx
+    0.00 :   21b1:   shr    $0x3,%r8d
+    0.00 :   21b5:   lea    -0x1(%r13),%r10d
+    0.00 :   21b9:   and    $0xfffffff8,%r9d
+    0.00 :   21bd:   mov    $0x1,%edx
+    0.00 :   21c2:   shl    $0x5,%r8
+    0.00 :   21c6:   cs nopw 0x0(%rax,%rax,1)
+         : 49   const float c = h[k];
+    0.00 :   21d0:   vmovss -0x4(%r12,%rdx,4),%xmm3
+    0.07 :   21d7:   lea    -0x1(%rdx),%r11
+         : 52   const float *xs = x + k;
+         : 53   for (int i = 0; i < n; i++)
+    0.00 :   21db:   cmp    $0x6,%r10d
+    0.00 :   21df:   jbe    2317 <fir_filter+0x1a7>
+    0.00 :   21e5:   vbroadcastss (%r12,%rdx,4),%ymm1
+    0.00 :   21eb:   vbroadcastss %xmm3,%ymm2
+    0.00 :   21f0:   lea    0x4(%rcx),%rsi
+         : 59   const float c = h[k];
+    0.00 :   21f4:   xor    %eax,%eax
+    0.00 :   21f6:   cs nopw 0x0(%rax,%rax,1)
+         : 62   y[i] += c * xs[i];
+    0.00 :   2200:   vmovups (%rcx,%rax,1),%ymm0
+   33.38 :   2205:   vfmadd213ps (%rdi,%rax,1),%ymm2,%ymm0
+   35.31 :   220b:   vfmadd231ps (%rsi,%rax,1),%ymm1,%ymm0
+   23.38 :   2211:   vmovups %ymm0,(%rdi,%rax,1)
+         : 67   for (int i = 0; i < n; i++)
+    7.86 :   2216:   add    $0x20,%rax
+    0.00 :   221a:   cmp    %rax,%r8
+    0.00 :   221d:   jne    2200 <fir_filter+0x90>
+    0.00 :   221f:   cmp    %r9d,%r13d
+    0.00 :   2222:   je     22f3 <fir_filter+0x183>
+         : 73   y[i] += c * xs[i];
+    0.00 :   2228:   mov    %r9d,%esi
+         : 75   for (int i = 0; i < n; i++)
+    0.00 :   222b:   mov    %r9d,%eax
+    0.00 :   222e:   mov    %r13d,%r14d
+    0.00 :   2231:   sub    %esi,%r14d
+    0.00 :   2234:   lea    -0x1(%r14),%r15d
+    0.00 :   2238:   cmp    $0x2,%r15d
+    0.00 :   223c:   jbe    2275 <fir_filter+0x105>
+         : 82   y[i] += c * xs[i];
+    0.00 :   223e:   lea    (%rdi,%rsi,4),%r15
+    0.00 :   2242:   add    %r11,%rsi
+    0.00 :   2245:   vshufps $0x0,%xmm3,%xmm3,%xmm1
+         : 86   const float c = h[k];
+    0.00 :   224a:   vbroadcastss (%r12,%rdx,4),%xmm0
+         : 88   y[i] += c * xs[i];
+    0.00 :   2250:   vmovups (%r15),%xmm4
+    0.00 :   2255:   vfmadd132ps (%rbx,%rsi,4),%xmm4,%xmm1
+    0.00 :   225b:   vfmadd132ps 0x4(%rbx,%rsi,4),%xmm1,%xmm0
+    0.00 :   2262:   mov    %r14d,%esi
+    0.00 :   2265:   and    $0xfffffffc,%esi
+    0.00 :   2268:   add    %esi,%eax
+    0.00 :   226a:   and    $0x3,%r14d
+    0.00 :   226e:   vmovups %xmm0,(%r15)
+         : 97   for (int i = 0; i < n; i++)
+    0.00 :   2273:   je     22f3 <fir_filter+0x183>
+    0.00 :   2275:   movslq %eax,%rsi
+    0.00 :   2278:   vmovss (%r12,%rdx,4),%xmm1
+         : 101  y[i] += c * xs[i];
+    0.00 :   227e:   lea    0x0(,%rsi,4),%r14
+    0.00 :   2286:   add    %rsi,%r11
+    0.00 :   2289:   add    %rdx,%rsi
+    0.00 :   228c:   lea    (%rdi,%r14,1),%r15
+    0.00 :   2290:   vmovss (%rbx,%r11,4),%xmm2
+    0.00 :   2296:   vmovss (%rbx,%rsi,4),%xmm0
+         : 108  for (int i = 0; i < n; i++)
+    0.00 :   229b:   lea    0x1(%rax),%r11d
+         : 110  y[i] += c * xs[i];
+    0.00 :   229f:   vfmadd213ss (%r15),%xmm3,%xmm2
+    0.00 :   22a4:   vfmadd231ss %xmm1,%xmm0,%xmm2
+    0.00 :   22a9:   vmovss %xmm2,(%r15)
+         : 114  for (int i = 0; i < n; i++)
+    0.00 :   22ae:   cmp    %r11d,%r13d
+    0.00 :   22b1:   jle    22f3 <fir_filter+0x183>
+         : 117  y[i] += c * xs[i];
+    0.00 :   22b3:   lea    0x4(%rdi,%r14,1),%rsi
+    0.00 :   22b8:   movslq %r11d,%r11
+         : 120  for (int i = 0; i < n; i++)
+    0.00 :   22bb:   add    $0x2,%eax
+         : 122  y[i] += c * xs[i];
+    0.00 :   22be:   vfmadd213ss (%rsi),%xmm3,%xmm0
+    0.00 :   22c3:   add    %rdx,%r11
+    0.00 :   22c6:   vmovss (%rbx,%r11,4),%xmm2
+    0.00 :   22cc:   vfmadd231ss %xmm1,%xmm2,%xmm0
+    0.00 :   22d1:   vmovss %xmm0,(%rsi)
+         : 128  for (int i = 0; i < n; i++)
+    0.00 :   22d5:   cmp    %eax,%r13d
+    0.00 :   22d8:   jle    22f3 <fir_filter+0x183>
+         : 131  y[i] += c * xs[i];
+    0.00 :   22da:   lea    0x8(%rdi,%r14,1),%rsi
+    0.00 :   22df:   cltq
+    0.00 :   22e1:   vfmadd213ss (%rsi),%xmm3,%xmm2
+    0.00 :   22e6:   add    %rdx,%rax
+    0.00 :   22e9:   vfmadd132ss (%rbx,%rax,4),%xmm2,%xmm1
+    0.00 :   22ef:   vmovss %xmm1,(%rsi)
+         : 138  for (int k = 0; k < FIR_TAPS; k++) {
+    0.00 :   22f3:   add    $0x2,%rdx
+    0.00 :   22f7:   add    $0x8,%rcx
+    0.00 :   22fb:   cmp    $0x31,%rdx
+    0.00 :   22ff:   jne    21d0 <fir_filter+0x60>
+    0.00 :   2305:   vzeroupper
+         : 144  }
+         : 145  }
+    0.00 :   2308:   lea    -0x28(%rbp),%rsp
+    0.00 :   230c:   pop    %rbx
+    0.00 :   230d:   pop    %r12
+    0.00 :   230f:   pop    %r13
+    0.00 :   2311:   pop    %r14
+    0.00 :   2313:   pop    %r15
+    0.00 :   2315:   pop    %rbp
+    0.00 :   2316:   ret
+         : 154  const float c = h[k];
+    0.00 :   2317:   xor    %esi,%esi
+         : 156  for (int i = 0; i < n; i++)
+    0.00 :   2319:   xor    %eax,%eax
+    0.00 :   231b:   jmp    222e <fir_filter+0xbe>

@@ -1,0 +1,20 @@
+# started on Fri Oct 23 10:42:27 2026
+
+
+ Performance counter stats for '/home/dvivto/lab2-perf/build/sigproc_O0 30 22 1536' (3 runs):
+
+          13126.35 msec task-clock                       #    1.000 CPUs utilized               ( +-  1.38% )
+                62      context-switches                 #    4.723 /sec                        ( +-  1.61% )
+                 0      cpu-migrations                   #    0.000 /sec                      
+             12870      page-faults                      #  980.470 /sec                      
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      L1-dcache-loads                                                       
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      LLC-loads                                                             
+   <not supported>      LLC-load-misses                                                       
+
+            13.130 +- 0.180 seconds time elapsed  ( +-  1.37% )
+

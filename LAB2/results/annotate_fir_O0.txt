@@ -1,0 +1,87 @@
+ Percent |	Source code & Disassembly of sigproc_O0 for cpu-clock:u (9302 samples, percent: local period)
+-------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    0000000000001444 <fir_filter>:
+         : 6    }
+         :
+         : 8    /* 2. FIR filter; loops swapped so the inner one vectorizes (FMA) */
+         : 9    STAGE void fir_filter(float *restrict y, const float *restrict x,
+         : 10   const float *restrict h, int n)
+         : 11   {
+    0.00 :   1444:   endbr64
+    0.00 :   1448:   push   %rbp
+    0.00 :   1449:   mov    %rsp,%rbp
+    0.00 :   144c:   sub    $0x40,%rsp
+    0.00 :   1450:   mov    %rdi,-0x28(%rbp)
+    0.00 :   1454:   mov    %rsi,-0x30(%rbp)
+    0.00 :   1458:   mov    %rdx,-0x38(%rbp)
+    0.00 :   145c:   mov    %ecx,-0x3c(%rbp)
+         : 20   memset(y, 0, (size_t)n * sizeof(float));
+    0.00 :   145f:   mov    -0x3c(%rbp),%eax
+    0.00 :   1462:   cltq
+    0.00 :   1464:   lea    0x0(,%rax,4),%rdx
+    0.00 :   146c:   mov    -0x28(%rbp),%rax
+    0.00 :   1470:   mov    $0x0,%esi
+    0.00 :   1475:   mov    %rax,%rdi
+    0.00 :   1478:   call   1130 <memset@plt>
+         : 28   for (int k = 0; k < FIR_TAPS; k++) {
+    0.00 :   147d:   movl   $0x0,-0x14(%rbp)
+    0.00 :   1484:   jmp    1528 <fir_filter+0xe4>
+         : 31   const float c = h[k];
+    0.00 :   1489:   mov    -0x14(%rbp),%eax
+    0.00 :   148c:   cltq
+    0.00 :   148e:   lea    0x0(,%rax,4),%rdx
+    0.00 :   1496:   mov    -0x38(%rbp),%rax
+    0.00 :   149a:   add    %rdx,%rax
+    0.00 :   149d:   movss  (%rax),%xmm0
+    0.01 :   14a1:   movss  %xmm0,-0xc(%rbp)
+         : 39   const float *xs = x + k;
+    0.00 :   14a6:   mov    -0x14(%rbp),%eax
+    0.00 :   14a9:   cltq
+    0.00 :   14ab:   lea    0x0(,%rax,4),%rdx
+    0.00 :   14b3:   mov    -0x30(%rbp),%rax
+    0.00 :   14b7:   add    %rdx,%rax
+    0.00 :   14ba:   mov    %rax,-0x8(%rbp)
+         : 46   for (int i = 0; i < n; i++)
+    0.00 :   14be:   movl   $0x0,-0x10(%rbp)
+    0.00 :   14c5:   jmp    151c <fir_filter+0xd8>
+         : 49   y[i] += c * xs[i];
+    0.10 :   14c7:   mov    -0x10(%rbp),%eax
+    0.04 :   14ca:   cltq
+    0.00 :   14cc:   lea    0x0(,%rax,4),%rdx
+   11.36 :   14d4:   mov    -0x28(%rbp),%rax
+    9.84 :   14d8:   add    %rdx,%rax
+    0.09 :   14db:   movss  (%rax),%xmm1
+    3.13 :   14df:   mov    -0x10(%rbp),%eax
+    0.00 :   14e2:   cltq
+    0.01 :   14e4:   lea    0x0(,%rax,4),%rdx
+    0.01 :   14ec:   mov    -0x8(%rbp),%rax
+    0.00 :   14f0:   add    %rdx,%rax
+   11.97 :   14f3:   movss  (%rax),%xmm0
+   14.02 :   14f7:   mulss  -0xc(%rbp),%xmm0
+    4.98 :   14fc:   mov    -0x10(%rbp),%eax
+    0.38 :   14ff:   cltq
+    0.01 :   1501:   lea    0x0(,%rax,4),%rdx
+    0.02 :   1509:   mov    -0x28(%rbp),%rax
+    0.01 :   150d:   add    %rdx,%rax
+    0.00 :   1510:   addss  %xmm1,%xmm0
+   33.36 :   1514:   movss  %xmm0,(%rax)
+         : 70   for (int i = 0; i < n; i++)
+   10.47 :   1518:   addl   $0x1,-0x10(%rbp)
+    0.15 :   151c:   mov    -0x10(%rbp),%eax
+    0.03 :   151f:   cmp    -0x3c(%rbp),%eax
+    0.02 :   1522:   jl     14c7 <fir_filter+0x83>
+         : 75   for (int k = 0; k < FIR_TAPS; k++) {
+    0.00 :   1524:   addl   $0x1,-0x14(%rbp)
+    0.00 :   1528:   cmpl   $0x2f,-0x14(%rbp)
+    0.00 :   152c:   jle    1489 <fir_filter+0x45>
+         : 79   }
+         : 80   }
+    0.00 :   1532:   nop
+    0.00 :   1533:   nop
+    0.00 :   1534:   leave
+    0.00 :   1535:   ret

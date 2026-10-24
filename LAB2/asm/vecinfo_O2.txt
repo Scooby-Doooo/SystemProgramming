@@ -1,0 +1,111 @@
+src/sigproc.c:30:15: missed: statement clobbers memory: p_6 = aligned_alloc (64, _2);
+src/sigproc.c:32:9: missed: statement clobbers memory: perror ("aligned_alloc");
+src/sigproc.c:33:9: missed: statement clobbers memory: exit (1);
+src/sigproc.c:33:9: note: ***** Analysis failed with vector mode VOID
+src/sigproc.c:42:23: missed: couldn't vectorize loop
+src/sigproc.c:43:11: missed: not vectorized: unsupported use in stmt.
+src/sigproc.c:39:12: note: vectorized 0 loops in function.
+src/sigproc.c:45:11: note: ***** Analysis failed with vector mode V4SI
+src/sigproc.c:45:11: note: ***** The result for vector mode V16QI would be the same
+src/sigproc.c:45:11: note: ***** Re-trying analysis with vector mode V8QI
+src/sigproc.c:45:11: note: ***** Analysis failed with vector mode V8QI
+src/sigproc.c:45:11: note: ***** Re-trying analysis with vector mode V4QI
+src/sigproc.c:45:11: note: ***** Analysis failed with vector mode V4QI
+src/sigproc.c:58:23: missed: couldn't vectorize loop
+src/sigproc.c:58:23: missed: not vectorized: control flow in loop.
+src/sigproc.c:61:27: missed: couldn't vectorize loop
+src/sigproc.c:62:14: missed: not vectorized: no vectype for stmt: _9 = *_8;
+ scalar_type: float
+src/sigproc.c:54:12: note: vectorized 0 loops in function.
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin_memset (y_20(D), 0, _2);
+src/sigproc.c:54:12: note: ***** Analysis failed with vector mode V4SF
+src/sigproc.c:54:12: note: ***** The result for vector mode V16QI would be the same
+src/sigproc.c:54:12: note: ***** Re-trying analysis with vector mode V8QI
+src/sigproc.c:54:12: note: ***** Analysis failed with vector mode V8QI
+src/sigproc.c:54:12: note: ***** Re-trying analysis with vector mode V4QI
+src/sigproc.c:54:12: note: ***** Analysis failed with vector mode V4QI
+src/sigproc.c:69:23: missed: couldn't vectorize loop
+src/sigproc.c:75:38: missed: not vectorized: complicated access pattern.
+src/sigproc.c:74:27: missed: couldn't vectorize loop
+src/sigproc.c:75:25: missed: not vectorized: no vectype for stmt: _14 = *_13;
+ scalar_type: const float
+src/sigproc.c:67:12: note: vectorized 0 loops in function.
+src/sigproc.c:67:12: note: ***** Analysis failed with vector mode V4SF
+src/sigproc.c:67:12: note: ***** The result for vector mode V16QI would be the same
+src/sigproc.c:67:12: note: ***** Re-trying analysis with vector mode V8QI
+src/sigproc.c:67:12: note: ***** Analysis failed with vector mode V8QI
+src/sigproc.c:67:12: note: ***** Re-trying analysis with vector mode V4QI
+src/sigproc.c:67:12: note: ***** Analysis failed with vector mode V4QI
+src/sigproc.c:83:23: missed: couldn't vectorize loop
+src/sigproc.c:84:25: missed: not vectorized: no vectype for stmt: _5 = *_4;
+ scalar_type: const float
+src/sigproc.c:80:12: note: vectorized 0 loops in function.
+src/sigproc.c:91:1: note: ***** Analysis failed with vector mode V4SF
+src/sigproc.c:91:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+src/sigproc.c:97:23: missed: couldn't vectorize loop
+src/sigproc.c:98:15: missed: not vectorized: no vectype for stmt: _4 = *_3;
+ scalar_type: const float
+src/sigproc.c:94:14: note: vectorized 0 loops in function.
+src/sigproc.c:99:12: note: ***** Analysis failed with vector mode V4SF
+src/sigproc.c:99:12: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SF
+src/sigproc.c:169:23: missed: couldn't vectorize loop
+src/sigproc.c:170:21: missed: not vectorized: unsupported use in stmt.
+src/sigproc.c:141:23: missed: couldn't vectorize loop
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:147:29: missed: couldn't vectorize loop
+src/sigproc.c:148:13: missed: statement clobbers memory: heat_step (gb_154, ga_254, iftmp.2_83, 2.0000000298023223876953125e-1);
+src/sigproc.c:131:30: missed: couldn't vectorize loop
+src/sigproc.c:133:38: missed: not vectorized: complicated access pattern.
+src/sigproc.c:132:34: missed: couldn't vectorize loop
+src/sigproc.c:133:38: missed: not vectorized: no vectype for stmt: *_44 = 1.0e+2;
+ scalar_type: float
+src/sigproc.c:126:23: optimized: loop vectorized using 16 byte vectors
+src/sigproc.c:122:23: missed: couldn't vectorize loop
+src/sigproc.c:122:23: missed: not vectorized: control flow in loop.
+src/sigproc.c:102:5: note: vectorized 1 loops in function.
+/usr/include/stdlib.h:483:16: missed: statement clobbers memory: _151 = strtol (_2, 0B, 10);
+/usr/include/stdlib.h:483:16: missed: statement clobbers memory: _176 = strtol (_4, 0B, 10);
+/usr/include/stdlib.h:483:16: missed: statement clobbers memory: _178 = strtol (_5, 0B, 10);
+src/sigproc.c:113:18: missed: statement clobbers memory: sig_115 = xalloc (_16);
+src/sigproc.c:114:18: missed: statement clobbers memory: flt_117 = xalloc (_17);
+src/sigproc.c:115:16: missed: statement clobbers memory: h_119 = xalloc (192);
+src/sigproc.c:116:17: missed: statement clobbers memory: ga_121 = xalloc (_20);
+src/sigproc.c:117:17: missed: statement clobbers memory: gb_123 = xalloc (_20);
+src/sigproc.c:118:22: missed: statement clobbers memory: hist_125 = xalloc (16384);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin_memset (ga_121, 0, _20);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:10: missed: statement clobbers memory: __builtin_memcpy (gb_123, ga_121, _20);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:143:9: missed: statement clobbers memory: synth_signal (sig_115, _82, &seed);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:145:9: missed: statement clobbers memory: fir_filter (flt_117, sig_115, h_119, n_113);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:148:13: missed: statement clobbers memory: heat_step (gb_154, ga_254, iftmp.2_83, 2.0000000298023223876953125e-1);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin_memset (hist_125, 0, 16384);
+src/sigproc.c:155:9: missed: statement clobbers memory: quantize_hist (flt_117, n_113, hist_125, -2.0000000298023223876953125e-1, 1.2000000476837158203125e+0);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+src/sigproc.c:157:16: missed: statement clobbers memory: _51 = checksum (flt_117, n_113);
+src/sigproc.c:157:35: missed: statement clobbers memory: _53 = checksum (gb_276, _52);
+src/sigproc.c:23:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "rounds=%d  n=2^%d  grid=%dx%d  taps=%d\n", iftmp.0_251, iftmp.1_84, iftmp.2_83, iftmp.2_83, 48);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9s %7s\n", "stage", "time, s", "share");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "synth_signal", t_syn_262, _70);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "fir_filter", t_fir_264, _72);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "heat_step", t_heat_266, _74);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "quantize_hist", t_hist_268, _76);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f %6.1f%%\n", "checksum", t_sum_270, _78);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%-14s %9.3f\n", "TOTAL", total_128);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "result: acc=%.6e  hist=%016llx\n", acc_272, hsig_89);
+src/sigproc.c:183:5: missed: statement clobbers memory: free (sig_115);
+src/sigproc.c:184:5: missed: statement clobbers memory: free (flt_117);
+src/sigproc.c:185:5: missed: statement clobbers memory: free (h_119);
+src/sigproc.c:186:5: missed: statement clobbers memory: free (ga_148);
+src/sigproc.c:187:5: missed: statement clobbers memory: free (gb_143);
+src/sigproc.c:188:5: missed: statement clobbers memory: free (hist_125);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.3_13, 2, "usage: %s [rounds>=1] [log2n 10..28] [grid>=16]\n", _12);
+src/sigproc.c:107:20: note: ***** Analysis failed with vector mode V2DI
+src/sigproc.c:107:20: note: ***** The result for vector mode V16QI would be the same
+src/sigproc.c:107:20: note: ***** Re-trying analysis with vector mode V8QI
+src/sigproc.c:107:20: note: ***** Analysis failed with vector mode V8QI
+src/sigproc.c:107:20: note: ***** Re-trying analysis with vector mode V4QI
+src/sigproc.c:107:20: note: ***** Analysis failed with vector mode V4QI

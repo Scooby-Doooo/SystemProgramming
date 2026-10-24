@@ -1,0 +1,69 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 13K of event 'cpu-clock'
+# Event count (approx.): 13283283270
+#
+# Overhead  Symbol                            IPC   [IPC Coverage]
+# ........  ................................  ....................
+#
+    69.60%  [.] fir_filter                    -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+    17.87%  [.] heat_step                     -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+     6.02%  [.] synth_signal                  -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+     4.02%  [.] checksum                      -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+     1.90%  [.] quantize_hist                 -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.29%  [.] __memset_avx2_unaligned_erms  -      -            
+     0.10%  [k] do_user_addr_fault            -      -            
+     0.05%  [k] clear_page_erms               -      -            
+     0.02%  [k] _raw_spin_unlock_irq          -      -            
+     0.02%  [k] _raw_spin_unlock_irqrestore   -      -            
+     0.01%  [k] __folio_throttle_swaprate     -      -            
+     0.01%  [k] __get_user_8                  -      -            
+     0.01%  [k] __mem_cgroup_charge           -      -            
+     0.01%  [k] __pte_offset_map_lock         -      -            
+     0.01%  [k] __rmqueue_pcplist             -      -            
+     0.01%  [k] _find_next_bit                -      -            
+     0.01%  [k] blk_cgroup_congested          -      -            
+     0.01%  [k] blkcg_maybe_throttle_current  -      -            
+     0.01%  [k] do_anonymous_page             -      -            
+     0.01%  [k] folio_add_new_anon_rmap       -      -            
+     0.01%  [k] handle_softirqs               -      -            
+     0.01%  [k] sched_balance_rq              -      -            
+     0.01%  [k] unmap_page_range              -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

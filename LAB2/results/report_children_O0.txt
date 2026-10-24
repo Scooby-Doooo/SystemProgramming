@@ -1,0 +1,88 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 13K of event 'cpu-clock'
+# Event count (approx.): 13283283270
+#
+# Children      Self  Symbol                              IPC   [IPC Coverage]
+# ........  ........  ..................................  ....................
+#
+   100.00%     0.00%  [.] __libc_start_main_impl (inlined)  -      -            
+   100.00%     0.00%  [.] _start                          -      -            
+   100.00%     0.00%  [.] main                            -      -            
+    96.85%     0.00%  [.] __libc_start_call_main          -      -            
+    70.01%    69.60%  [.] fir_filter                      -      -            
+    17.90%    17.87%  [.] heat_step                       -      -            
+     6.08%     6.02%  [.] synth_signal                    -      -            
+     4.02%     4.02%  [.] checksum                        -      -            
+     3.15%     0.00%  [.] __libc_start_call_main          -      -            
+     1.90%     1.90%  [.] quantize_hist                   -      -            
+     0.39%     0.29%  [.] __memset_avx2_unaligned_erms    -      -            
+     0.20%     0.10%  [k] do_user_addr_fault              -      -            
+     0.20%     0.00%  [k] asm_exc_page_fault              -      -            
+     0.20%     0.00%  [k] exc_page_fault                  -      -            
+     0.11%     0.01%  [k] do_anonymous_page               -      -            
+     0.11%     0.00%  [k] __handle_mm_fault               -      -            
+     0.11%     0.00%  [k] handle_mm_fault                 -      -            
+     0.07%     0.00%  [k] asm_sysvec_hyperv_stimer0       -      -            
+     0.07%     0.00%  [k] sysvec_hyperv_stimer0           -      -            
+     0.06%     0.00%  [k] __alloc_frozen_pages_noprof     -      -            
+     0.06%     0.00%  [k] alloc_pages_mpol                -      -            
+     0.06%     0.00%  [k] vma_alloc_folio_noprof          -      -            
+     0.05%     0.05%  [k] clear_page_erms                 -      -            
+     0.05%     0.01%  [k] handle_softirqs                 -      -            
+     0.05%     0.00%  [k] irq_exit_rcu                    -      -            
+     0.05%     0.00%  [.] __memcpy_avx_unaligned_erms (inlined)  -      -            
+     0.03%     0.00%  [k] run_timer_softirq               -      -            
+     0.03%     0.00%  [k] tmigr_handle_remote             -      -            
+     0.02%     0.02%  [k] _raw_spin_unlock_irq            -      -            
+     0.02%     0.00%  [k] timer_expire_remote             -      -            
+     0.02%     0.02%  [k] _raw_spin_unlock_irqrestore     -      -            
+     0.02%     0.01%  [k] __folio_throttle_swaprate       -      -            
+     0.02%     0.01%  [k] sched_balance_rq                -      -            
+     0.02%     0.00%  [.] __GI___libc_free (inlined)      -      -            
+     0.02%     0.00%  [.] __GI_munmap (inlined)           -      -            
+     0.02%     0.00%  [k] __vm_munmap                     -      -            
+     0.02%     0.00%  [k] __x64_sys_munmap                -      -            
+     0.02%     0.00%  [k] do_syscall_64                   -      -            
+     0.02%     0.00%  [k] do_vmi_align_munmap             -      -            
+     0.02%     0.00%  [k] do_vmi_munmap                   -      -            
+     0.02%     0.00%  [k] entry_SYSCALL_64_after_hwframe  -      -            
+     0.02%     0.00%  [k] irqentry_exit                   -      -            
+     0.02%     0.00%  [k] sched_balance_domains           -      -            
+     0.02%     0.00%  [k] sched_balance_softirq           -      -            
+     0.02%     0.00%  [k] vms_clear_ptes.part.0           -      -            
+     0.02%     0.00%  [k] vms_complete_munmap_vmas        -      -            
+     0.02%     0.00%  [k] x64_sys_call                    -      -            
+     0.01%     0.01%  [k] __get_user_8                    -      -            
+     0.01%     0.01%  [k] __mem_cgroup_charge             -      -            
+     0.01%     0.01%  [k] __pte_offset_map_lock           -      -            
+     0.01%     0.01%  [k] __rmqueue_pcplist               -      -            
+     0.01%     0.01%  [k] _find_next_bit                  -      -            
+     0.01%     0.01%  [k] blk_cgroup_congested            -      -            
+     0.01%     0.01%  [k] blkcg_maybe_throttle_current    -      -            
+     0.01%     0.01%  [k] folio_add_new_anon_rmap         -      -            
+     0.01%     0.01%  [k] unmap_page_range                -      -            
+     0.01%     0.00%  [k] __run_timers                    -      -            
+     0.01%     0.00%  [k] __tlb_batch_free_encoded_pages  -      -            
+     0.01%     0.00%  [k] call_timer_fn                   -      -            
+     0.01%     0.00%  [k] folios_put_refs                 -      -            
+     0.01%     0.00%  [k] free_frozen_page_commit         -      -            
+     0.01%     0.00%  [k] free_pages_and_swap_cache       -      -            
+     0.01%     0.00%  [k] free_pcppages_bulk              -      -            
+     0.01%     0.00%  [k] free_unref_folios               -      -            
+     0.01%     0.00%  [k] get_page_from_freelist          -      -            
+     0.01%     0.00%  [k] irqentry_exit_to_user_mode      -      -            
+     0.01%     0.00%  [k] process_timeout                 -      -            
+     0.01%     0.00%  [k] tlb_finish_mmu                  -      -            
+     0.01%     0.00%  [k] try_to_wake_up                  -      -            
+     0.01%     0.00%  [k] unmap_single_vma.isra.0         -      -            
+     0.01%     0.00%  [k] unmap_vmas                      -      -            
+     0.01%     0.00%  [k] wake_up_process                 -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

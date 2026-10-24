@@ -1,0 +1,72 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu-clock'
+# Event count (approx.): 2325325323
+#
+# Overhead  Symbol                            IPC   [IPC Coverage]
+# ........  ................................  ....................
+#
+    56.61%  [.] fir_filter                    -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+    13.73%  [.] heat_step.constprop.0         -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+    12.66%  [.] synth_signal                  -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+     7.49%  [.] quantize_hist                 -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+     6.54%  [.] checksum                      -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+     1.59%  [.] __memset_avx2_unaligned_erms  -      -            
+            |
+            ---memset (inlined)
+               fir_filter
+               main
+               __libc_start_call_main
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.47%  [k] do_user_addr_fault            -      -            
+     0.39%  [k] clear_page_erms               -      -            
+     0.09%  [k] __pte_offset_map_lock         -      -            
+     0.09%  [k] _raw_spin_unlock_irqrestore   -      -            
+     0.04%  [.] __memmove_avx_unaligned_erms  -      -            
+     0.04%  [k] __rcu_read_lock               -      -            
+     0.04%  [.] __vdso_clock_gettime          -      -            
+     0.04%  [k] _raw_spin_unlock_irq          -      -            
+     0.04%  [k] blk_cgroup_congested          -      -            
+     0.04%  [k] charge_memcg                  -      -            
+     0.04%  [k] folios_put_refs               -      -            
+     0.04%  [k] memcg1_commit_charge          -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

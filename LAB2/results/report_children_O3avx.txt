@@ -1,0 +1,82 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu-clock'
+# Event count (approx.): 2325325323
+#
+# Children      Self  Symbol                              IPC   [IPC Coverage]
+# ........  ........  ..................................  ....................
+#
+   100.00%     0.00%  [.] __libc_start_call_main          -      -            
+   100.00%     0.00%  [.] __libc_start_main_impl (inlined)  -      -            
+   100.00%     0.00%  [.] _start                          -      -            
+   100.00%     0.00%  [.] main                            -      -            
+    58.76%    56.61%  [.] fir_filter                      -      -            
+    13.78%     0.00%  [.] heat_step (inlined)             -      -            
+    13.73%    13.73%  [.] heat_step.constprop.0           -      -            
+    12.96%    12.66%  [.] synth_signal                    -      -            
+     7.49%     7.49%  [.] quantize_hist                   -      -            
+     6.54%     6.54%  [.] checksum                        -      -            
+     2.32%     1.59%  [.] __memset_avx2_unaligned_erms    -      -            
+     2.15%     0.00%  [.] memset (inlined)                -      -            
+     1.21%     0.47%  [k] do_user_addr_fault              -      -            
+     1.21%     0.00%  [k] asm_exc_page_fault              -      -            
+     1.21%     0.00%  [k] exc_page_fault                  -      -            
+     0.69%     0.00%  [k] __handle_mm_fault               -      -            
+     0.69%     0.00%  [k] do_anonymous_page               -      -            
+     0.69%     0.00%  [k] handle_mm_fault                 -      -            
+     0.39%     0.39%  [k] clear_page_erms                 -      -            
+     0.39%     0.00%  [k] __alloc_frozen_pages_noprof     -      -            
+     0.39%     0.00%  [k] alloc_pages_mpol                -      -            
+     0.39%     0.00%  [k] vma_alloc_folio_noprof          -      -            
+     0.22%     0.00%  [.] __memcpy_avx_unaligned_erms (inlined)  -      -            
+     0.22%     0.00%  [.] memcpy (inlined)                -      -            
+     0.17%     0.00%  [.] memset (inlined)                -      -            
+     0.09%     0.09%  [k] __pte_offset_map_lock           -      -            
+     0.09%     0.09%  [k] _raw_spin_unlock_irqrestore     -      -            
+     0.09%     0.04%  [k] charge_memcg                    -      -            
+     0.09%     0.04%  [k] folios_put_refs                 -      -            
+     0.09%     0.00%  [k] __folio_batch_add_and_move      -      -            
+     0.09%     0.00%  [k] folio_add_lru_vma               -      -            
+     0.09%     0.00%  [k] folio_batch_move_lru            -      -            
+     0.04%     0.04%  [.] __memmove_avx_unaligned_erms    -      -            
+     0.04%     0.04%  [k] __rcu_read_lock                 -      -            
+     0.04%     0.04%  [.] __vdso_clock_gettime            -      -            
+     0.04%     0.04%  [k] _raw_spin_unlock_irq            -      -            
+     0.04%     0.04%  [k] blk_cgroup_congested            -      -            
+     0.04%     0.04%  [k] memcg1_commit_charge            -      -            
+     0.04%     0.00%  [.] __GI___clock_gettime (inlined)  -      -            
+     0.04%     0.00%  [.] __GI___libc_free (inlined)      -      -            
+     0.04%     0.00%  [.] __GI_munmap (inlined)           -      -            
+     0.04%     0.00%  [k] __folio_throttle_swaprate       -      -            
+     0.04%     0.00%  [k] __mem_cgroup_charge             -      -            
+     0.04%     0.00%  [k] __tlb_batch_free_encoded_pages  -      -            
+     0.04%     0.00%  [k] __vm_munmap                     -      -            
+     0.04%     0.00%  [k] __x64_sys_munmap                -      -            
+     0.04%     0.00%  [k] asm_sysvec_hyperv_stimer0       -      -            
+     0.04%     0.00%  [k] do_syscall_64                   -      -            
+     0.04%     0.00%  [k] do_vmi_align_munmap             -      -            
+     0.04%     0.00%  [k] do_vmi_munmap                   -      -            
+     0.04%     0.00%  [k] entry_SYSCALL_64_after_hwframe  -      -            
+     0.04%     0.00%  [k] free_frozen_page_commit         -      -            
+     0.04%     0.00%  [k] free_pages_and_swap_cache       -      -            
+     0.04%     0.00%  [k] free_pcppages_bulk              -      -            
+     0.04%     0.00%  [k] free_unref_folios               -      -            
+     0.04%     0.00%  [k] handle_softirqs                 -      -            
+     0.04%     0.00%  [k] irq_exit_rcu                    -      -            
+     0.04%     0.00%  [k] lock_vma_under_rcu              -      -            
+     0.04%     0.00%  [.] now_sec (inlined)               -      -            
+     0.04%     0.00%  [k] run_timer_softirq               -      -            
+     0.04%     0.00%  [k] sysvec_hyperv_stimer0           -      -            
+     0.04%     0.00%  [k] tlb_finish_mmu                  -      -            
+     0.04%     0.00%  [k] tmigr_handle_remote             -      -            
+     0.04%     0.00%  [k] vms_clear_ptes.part.0           -      -            
+     0.04%     0.00%  [k] vms_complete_munmap_vmas        -      -            
+     0.04%     0.00%  [k] x64_sys_call                    -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
