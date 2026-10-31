@@ -2,6 +2,8 @@
 
 Лабораторна робота №3 з системного програмування. Автор: Dmytro Vitonichenko, ТТП-32.
 
+Відео із захистом: https://drive.google.com/file/d/1CZV4D9SuG_tkgJ3BR9GHuFWvURStWIn9/view?usp=sharing
+
 Синтаксичний аналізатор підмножини C++ на PLY (реалізація Lex/YACC на Python).
 Програма будує AST, виконує його (інтерпретатор), транслює в Python
 і показує дерево в браузері через d3.js.
